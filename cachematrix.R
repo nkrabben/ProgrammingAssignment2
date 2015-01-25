@@ -31,6 +31,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## if the inverse has not been stored, the function retrieves the value of the object's matrix with get()
 ## calculates the mean, and then stores it in the object with setinverse().
 
+## Because cacheSolve uses solve() to find an inverse, if a matrix is non-invertable, math explodes
+
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         m <- x$getinverse()
